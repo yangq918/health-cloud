@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.haici.health.component.autoconfigure.cache.CacheClientAutoConfiguration,\
+com.haici.health.component.autoconfigure.lock.LockAutoConfiguration,\
+com.haici.health.component.autoconfigure.id.IDAutoConfiguration,\
+com.haici.health.component.autoconfigure.db.dynamic.DynamicDataSourceAutoConfiguration,\
+com.haici.health.component.autoconfigure.db.mybatisplus.MybatisPlusAutoConfiguration,\
+com.haici.health.component.autoconfigure.web.WebLogAutoConfiguration

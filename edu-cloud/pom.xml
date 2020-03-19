@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>health-parent</artifactId>
+        <groupId>com.haici.health</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../health-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.haici.health</groupId>
+    <artifactId>edu-cloud</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.haici.health</groupId>
+            <artifactId>base-cloud</artifactId>
+            <version>${health.cloud.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.haici.health</groupId>
+            <artifactId>edu-facade-api</artifactId>
+            <version>${health.cloud.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.haici.health</groupId>
+            <artifactId>health-component-starter</artifactId>
+            <version>${health.component.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.haici.health</groupId>
+            <artifactId>component-cache</artifactId>
+            <version>${health.component.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.haici.health</groupId>
+            <artifactId>component-lock</artifactId>
+            <version>${health.component.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.haici.health</groupId>
+            <artifactId>component-id</artifactId>
+            <version>${health.component.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.haici.health</groupId>
+            <artifactId>component-db</artifactId>
+            <version>${health.component.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.haici.health</groupId>
+            <artifactId>component-web</artifactId>
+            <version>${health.component.version}</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <finalName>edu-cloud</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

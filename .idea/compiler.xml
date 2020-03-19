@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="base-cloud" />
+        <module name="base-facade-api" />
+        <module name="component-cache" />
+        <module name="component-db" />
+        <module name="component-id" />
+        <module name="component-lock" />
+        <module name="component-web" />
+        <module name="edu-cloud" />
+        <module name="edu-consumer-cloud" />
+        <module name="edu-facade-api" />
+        <module name="gateway-cloud" />
+        <module name="health-common" />
+        <module name="health-component-starter" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="health-id4j" target="1.8" />
+      <module name="health-lock4j" target="1.8" />
+      <module name="health-starter" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
