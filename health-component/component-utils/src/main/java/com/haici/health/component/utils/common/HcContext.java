@@ -1,4 +1,4 @@
-package com.haici.health.common.vo;
+package com.haici.health.component.utils.common;
 
 import lombok.Data;
 

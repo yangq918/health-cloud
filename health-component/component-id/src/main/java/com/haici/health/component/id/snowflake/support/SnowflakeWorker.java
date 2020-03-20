@@ -1,6 +1,8 @@
 package com.haici.health.component.id.snowflake.support;
 
 import com.haici.health.component.id.ID;
+import lombok.Setter;
+import org.springframework.util.Assert;
 
 import java.util.Random;
 
@@ -65,8 +67,10 @@ public class SnowflakeWorker {
      */
     private final long sequenceMask = -1L ^ (-1L << sequenceBits);
 
-    public SnowflakeWorker(String nacosAddress, String ip, int port) {
-        SnowflakeNacosHolder holder = new SnowflakeNacosHolder(nacosAddress, ip, port);
+
+    public SnowflakeWorker(SnowflakeNacosHolder holder) {
+
+        Assert.notNull(holder,"SnowflakeNacosHolder must not null");
         boolean initFlag = holder.init();
         if (initFlag) {
             workerId = holder.getWorkId();

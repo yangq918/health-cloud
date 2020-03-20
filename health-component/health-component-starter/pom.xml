@@ -66,9 +66,18 @@
         </dependency>
         <dependency>
             <groupId>com.haici.health</groupId>
-            <artifactId>component-log</artifactId>
+            <artifactId>component-web</artifactId>
             <version>${health.component.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
         </dependency>
 
     </dependencies>

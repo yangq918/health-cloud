@@ -1,6 +1,6 @@
 package com.haici.health.base.facade.vo;
 
-import com.haici.health.common.vo.BaseResult;
+import com.haici.health.component.utils.vo.BaseResult;
 
 /**
  * @Auther: QiaoYang

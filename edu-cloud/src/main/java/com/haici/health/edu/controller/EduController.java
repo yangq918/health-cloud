@@ -1,12 +1,12 @@
 package com.haici.health.edu.controller;
 
 import com.haici.health.base.facade.vo.BaseFacadeReqVo;
-import com.haici.health.common.vo.BaseResult;
-import com.haici.health.common.vo.HcContext;
 import com.haici.health.component.cache.CacheClient;
 import com.haici.health.component.id.IDGenerator;
 import com.haici.health.component.lock.DistributedLockTemplate;
 import com.haici.health.component.lock.LockCallback;
+import com.haici.health.component.utils.common.HcContext;
+import com.haici.health.component.utils.vo.BaseResult;
 import com.haici.health.edu.entity.Order;
 import com.haici.health.edu.entity.OrderItem;
 import com.haici.health.edu.entity.User;
@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @Auther: QiaoYang

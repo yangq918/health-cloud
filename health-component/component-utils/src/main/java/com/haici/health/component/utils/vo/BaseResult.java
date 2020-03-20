@@ -1,6 +1,6 @@
-package com.haici.health.common.vo;
+package com.haici.health.component.utils.vo;
 
-import com.haici.health.common.exceptions.BizException;
+import com.haici.health.component.utils.exception.BizException;
 import lombok.Data;
 
 import java.io.Serializable;

@@ -5,6 +5,9 @@ import com.haici.health.component.id.ID;
 import com.haici.health.component.id.IDFormat;
 import com.haici.health.component.id.IDGenerator;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @Auther: QiaoYang
  * @Date: 2020/3/17 15:38
@@ -90,5 +93,15 @@ public class RedisCacheIDGenerator implements IDGenerator {
         }
         return new ID(id, System.currentTimeMillis());
 
+    }
+
+    @Override
+    public String nextSeq(String prefix) {
+        long seq = next(prefix).id;
+        StringBuilder sbuf = new StringBuilder();
+        SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+        sbuf.append(prefix).append(sf.format(new Date())).append(seq);
+
+        return sbuf.toString();
     }
 }

@@ -8,15 +8,11 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>health-parent</module>
-        <module>health-common</module>
         <module>base-facade-api</module>
         <module>base-cloud</module>
         <module>gateway-cloud</module>
         <module>edu-cloud</module>
         <module>edu-facade-api</module>
-        <module>health-lock4j</module>
-        <module>health-id4j</module>
-        <module>health-starter</module>
         <module>health-component</module>
         <module>edu-consumer-cloud</module>
     </modules>

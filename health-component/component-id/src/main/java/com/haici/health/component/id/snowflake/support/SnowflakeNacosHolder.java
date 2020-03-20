@@ -6,6 +6,7 @@ import com.alibaba.nacos.api.naming.NamingFactory;
 import com.alibaba.nacos.api.naming.NamingService;
 import com.alibaba.nacos.api.naming.PreservedMetadataKeys;
 import com.alibaba.nacos.api.naming.pojo.Instance;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
@@ -33,8 +34,10 @@ public class SnowflakeNacosHolder {
     private int port;
 
 
+    @Setter
     private String idName = "default";
 
+    @Setter
     private String idGroup = "SNOWFLAKE_NODE_GROUP";
 
 
@@ -46,8 +49,6 @@ public class SnowflakeNacosHolder {
 
 
     public SnowflakeNacosHolder(String nacosAddress, String ip, int port) {
-        System.out.println(ip);
-        System.out.println(port);
         this.nacosAddress = nacosAddress;
         this.ip = ip;
         this.port = port;
@@ -125,8 +126,7 @@ public class SnowflakeNacosHolder {
             }
             workerId = Integer.parseInt(exsitInstance.getInstanceId());
 
-            //web.info("init workerid:{}",workerId);
-            System.out.println(workerId);
+            log.info("init workerid:{}",workerId);
         }
     }
 
@@ -140,6 +140,8 @@ public class SnowflakeNacosHolder {
         instance.setIp(ip);
         instance.setPort(port);
         instance.setEphemeral(false);
+        instance.setHealthy(true);
+        instance.setEnabled(false);
 
         Map<String, String> metaData = new HashMap<>();
         metaData.put(PreservedMetadataKeys.INSTANCE_ID_GENERATOR, Constants.SNOWFLAKE_INSTANCE_ID_GENERATOR);

@@ -1,8 +1,8 @@
 package com.haici.health.compoent.web.aop;
 
 import com.alibaba.fastjson.JSONObject;
-import com.haici.health.common.utils.GlobalContext;
-import com.haici.health.common.vo.HcContext;
+import com.haici.health.component.utils.common.GlobalContext;
+import com.haici.health.component.utils.common.HcContext;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.MethodInterceptor;

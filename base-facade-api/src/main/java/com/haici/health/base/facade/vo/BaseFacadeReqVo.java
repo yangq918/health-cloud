@@ -1,7 +1,7 @@
 package com.haici.health.base.facade.vo;
 
-import com.haici.health.common.utils.GlobalContext;
-import com.haici.health.common.vo.HcContext;
+import com.haici.health.component.utils.common.GlobalContext;
+import com.haici.health.component.utils.common.HcContext;
 
 import java.io.Serializable;
 import java.util.Map;

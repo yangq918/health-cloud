@@ -1,4 +1,4 @@
-package com.haici.health.common.exceptions;
+package com.haici.health.component.utils.exception;
 
 /**
  * @Auther: QiaoYang
@@ -36,7 +36,7 @@ public class BizException extends RuntimeException {
     }
 
 
-    public BizException(Throwable cause,int code, String msg,Object... args ) {
+    public BizException(Throwable cause, int code, String msg, Object... args ) {
         this(code, msg,args);
         this.initCause(cause);
     }

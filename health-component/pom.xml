@@ -20,6 +20,7 @@
         <module>component-id</module>
         <module>component-db</module>
         <module>component-web</module>
+        <module>component-utils</module>
     </modules>
 
 

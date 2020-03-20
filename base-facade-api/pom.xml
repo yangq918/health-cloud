@@ -15,8 +15,8 @@
     <dependencies>
         <dependency>
             <groupId>com.haici.health</groupId>
-            <artifactId>health-common</artifactId>
-            <version>${health.cloud.version}</version>
+            <artifactId>component-utils</artifactId>
+            <version>${health.component.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

@@ -3,15 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>health-parent</artifactId>
+        <artifactId>health-component</artifactId>
         <groupId>com.haici.health</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../health-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.haici.health</groupId>
-    <artifactId>health-common</artifactId>
+    <artifactId>component-utils</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -22,18 +21,6 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
     </dependencies>
 
 </project>

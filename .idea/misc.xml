@@ -10,6 +10,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/health-common/pom.xml" />
         <option value="$PROJECT_DIR$/health-id4j/pom.xml" />
         <option value="$PROJECT_DIR$/health-lock4j/pom.xml" />
         <option value="$PROJECT_DIR$/health-starter/pom.xml" />

@@ -1,10 +1,7 @@
 package com.haici.health.educomsumer.controller;
 
-import com.alibaba.nacos.api.exception.NacosException;
-import com.alibaba.nacos.api.naming.NamingFactory;
-import com.alibaba.nacos.api.naming.NamingService;
 import com.haici.health.base.facade.vo.BaseFacadeReqVo;
-import com.haici.health.common.vo.BaseResult;
+import com.haici.health.component.utils.vo.BaseResult;
 import com.haici.health.edu.facade.EduFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

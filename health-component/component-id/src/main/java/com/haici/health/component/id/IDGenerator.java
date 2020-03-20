@@ -60,4 +60,5 @@ public interface IDGenerator {
      */
     public ID next(String key, int timeout, IDFormat iDFormat);
 
+    String nextSeq(String prefix);
 }

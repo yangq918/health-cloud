@@ -1,4 +1,4 @@
-package com.haici.health.common.vo;
+package com.haici.health.component.utils.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;

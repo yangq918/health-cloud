@@ -1,6 +1,4 @@
-package com.haici.health.common.utils;
-
-import com.haici.health.common.vo.HcContext;
+package com.haici.health.component.utils.common;
 
 import java.util.concurrent.ConcurrentHashMap;
 

@@ -8,6 +8,7 @@ import com.haici.health.component.autoconfigure.cache.RedisCacheClientConfigurat
 import com.haici.health.component.cache.redis.RedisCacheClient;
 import com.haici.health.component.id.IDGenerator;
 import com.haici.health.component.id.snowflake.SnowflakeIDGenerator;
+import com.haici.health.component.id.snowflake.support.SnowflakeNacosHolder;
 import com.haici.health.component.id.snowflake.support.SnowflakeWorker;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,22 +39,31 @@ public class SnowflakeIDGenConfiguration {
      @Value("${spring.cloud.nacos.discovery.server-addr:}")
      private String serverAddr;
 
-     @Autowired
-     private ServerConfig serverConfig;
-
-
-
+     @Value("${server.port:8080}")
+     private int port;
 
 
      @Bean
-     public SnowflakeWorker snowflakeWorker(IDProperties idProperties, NacosRegistration registration)
+     public SnowflakeNacosHolder snowflakeNacosHolder(IDProperties idProperties, NacosRegistration registration)
      {
-          System.out.println(JSON.toJSONString(registration));
           String nacosAddr = StringUtils.isEmpty(idProperties.getSnowflake().getNacosAddress())?serverAddr:idProperties.getSnowflake().getNacosAddress();
+          System.out.println("port:"+port);
+          SnowflakeNacosHolder holder = new SnowflakeNacosHolder(nacosAddr,registration.getHost(),port);
+          if(StringUtils.isNotEmpty(idProperties.getSnowflake().getIdName()))
+          {
+               holder.setIdName(idProperties.getSnowflake().getIdName());
+          }
+          if(StringUtils.isNotEmpty(idProperties.getSnowflake().getIdGroup()))
+          {
+               holder.setIdGroup(idProperties.getSnowflake().getIdGroup());
+          }
+          return holder;
+     }
 
-
-          SnowflakeWorker snowflakeWorker = new SnowflakeWorker(nacosAddr,registration.getHost(),serverConfig.getServerPort());
-
+     @Bean
+     public SnowflakeWorker snowflakeWorker(SnowflakeNacosHolder snowflakeNacosHolder)
+     {
+          SnowflakeWorker snowflakeWorker = new SnowflakeWorker(snowflakeNacosHolder);
           return snowflakeWorker;
      }
 
@@ -63,29 +73,6 @@ public class SnowflakeIDGenConfiguration {
      public SnowflakeIDGenerator idGenerator(SnowflakeWorker snowflakeWorker)
      {
           return  SnowflakeIDGenerator.builder(snowflakeWorker).build();
-     }
-
-
-
-     @Bean
-     public ServerConfig serverConfig()
-     {
-          return new ServerConfig();
-     }
-
-     public static class ServerConfig implements ApplicationListener<WebServerInitializedEvent>
-     {
-
-          private int serverPort;
-          @Override
-          public void onApplicationEvent(WebServerInitializedEvent event) {
-               this.serverPort = event.getWebServer().getPort();
-               System.out.println("Get WebServer port :"+ serverPort);
-          }
-
-          public int getServerPort() {
-               return serverPort;
-          }
      }
 
 
