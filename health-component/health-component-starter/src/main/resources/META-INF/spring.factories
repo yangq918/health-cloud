@@ -5,4 +5,5 @@ com.haici.health.component.autoconfigure.id.IDAutoConfiguration,\
 com.haici.health.component.autoconfigure.db.dynamic.DynamicDataSourceAutoConfiguration,\
 com.haici.health.component.autoconfigure.db.mybatisplus.MybatisPlusAutoConfiguration,\
 com.haici.health.component.autoconfigure.web.WebLogAutoConfiguration,\
-com.haici.health.component.autoconfigure.web.WebInterceptorAutoConfiguration
+com.haici.health.component.autoconfigure.web.WebInterceptorAutoConfiguration,\
+com.haici.health.component.autoconfigure.web.WebSessionAutoConfiguration

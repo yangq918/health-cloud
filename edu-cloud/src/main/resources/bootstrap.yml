@@ -16,3 +16,16 @@ spring:
 
 server:
   port: 28000
+
+
+health:
+  component:
+    web:
+      sessions:
+        - path: /api/edu/cookie/**
+          create-by: hisId,platformId
+        - path: /api/edu/header/**
+          types: HEADER
+
+
+

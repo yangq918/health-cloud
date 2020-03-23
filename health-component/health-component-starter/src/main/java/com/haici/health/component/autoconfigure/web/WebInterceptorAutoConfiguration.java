@@ -37,7 +37,7 @@ public class WebInterceptorAutoConfiguration {
     }
 
     @Bean
-    public WebMvcConfigurer corsConfigurer() {
+    public WebMvcConfigurer healthInterceptorConfigurer() {
         return new WebMvcConfigurer() {
 
             @Override

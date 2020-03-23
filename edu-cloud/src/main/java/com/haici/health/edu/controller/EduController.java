@@ -5,6 +5,7 @@ import com.haici.health.component.cache.CacheClient;
 import com.haici.health.component.id.IDGenerator;
 import com.haici.health.component.lock.DistributedLockTemplate;
 import com.haici.health.component.lock.LockCallback;
+import com.haici.health.component.utils.common.GlobalContext;
 import com.haici.health.component.utils.common.HcContext;
 import com.haici.health.component.utils.vo.BaseResult;
 import com.haici.health.edu.entity.Order;
@@ -14,13 +15,18 @@ import com.haici.health.edu.facade.EduFacade;
 import com.haici.health.edu.mapper.OrderItemMapper;
 import com.haici.health.edu.mapper.OrderMapper;
 import com.haici.health.edu.mapper.UserMapper;
+import jdk.nashorn.internal.objects.Global;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -189,5 +195,41 @@ public class EduController {
         }
 
         return BaseResult.succssResult(null);
+    }
+
+
+    @GetMapping("/api/edu/cookie/cookieTest")
+    public BaseResult<HcContext> cookieTest(HttpServletRequest request) {
+        HcContext value = GlobalContext.getHcContext();
+        HttpSession session = request.getSession();
+        value.setAttr("id",session.getId());
+        String pkey = (String)session.getAttribute("pKey");
+        if(StringUtils.isEmpty(pkey))
+        {
+            pkey = UUID.randomUUID().toString();
+            session.setAttribute("pKey",pkey);
+
+        }
+        value.setAttr("pKey",pkey);
+
+        return BaseResult.succssResult(value);
+    }
+
+
+    @GetMapping("/api/edu/header/headerTest")
+    public BaseResult<HcContext> headerTest(HttpServletRequest request) {
+        HcContext value = GlobalContext.getHcContext();
+        HttpSession session = request.getSession();
+        value.setAttr("id",session.getId());
+        String pkey = (String)session.getAttribute("pKey");
+        if(StringUtils.isEmpty(pkey))
+        {
+            pkey = UUID.randomUUID().toString();
+            session.setAttribute("pKey",pkey);
+
+        }
+        value.setAttr("pKey",pkey);
+
+        return BaseResult.succssResult(value);
     }
 }
