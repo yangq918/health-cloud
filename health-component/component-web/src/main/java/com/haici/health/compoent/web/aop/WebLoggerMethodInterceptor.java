@@ -47,11 +47,11 @@ public class WebLoggerMethodInterceptor implements MethodInterceptor {
             logInfo.setHttpMethod(request.getMethod());
             Method method = invocation.getMethod();
             logInfo.setClassMethod(method.getDeclaringClass().getName() + "." + method.getName());
-            String cotentType = request.getContentType();
-            logInfo.setCotentType(cotentType);
+            String contentType = request.getContentType();
+            logInfo.setContentType(contentType);
             boolean isFile = false;
-            if (null != cotentType) {
-                isFile = cotentType.toLowerCase().contains("multipart");
+            if (null != contentType) {
+                isFile = contentType.toLowerCase().contains("multipart");
             }
 
             if (!isFile) {
@@ -119,7 +119,7 @@ public class WebLoggerMethodInterceptor implements MethodInterceptor {
 
         private String classMethod;
 
-        private String cotentType;
+        private String contentType;
 
         private List<Object> args;
 
